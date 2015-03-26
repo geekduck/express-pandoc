@@ -1,0 +1,27 @@
+extends layout
+
+block extraHeader
+  link(rel='stylesheet', href='/stylesheets/pandoc.css')
+
+block content
+  include pandocSelectlang
+  h1= title
+
+  p(id='message')
+  div(class='content flex-row')
+    div(class='flex-column')
+      +selectLang(srcName, srcLabel, srclanguages, '#h1\r##h2')
+      textarea(id='srcText')
+        # h1
+        ## h2
+
+    div(class='flex-column')
+      button(id='convertButton' type='button') 変換
+      button(id='swapButton' type='button') ⇔入れ替え
+
+    div(class='flex-column')
+      +selectLang(dstName, dstLabel, dstlanguages)
+      textarea(id='dstText')
+
+  script(src='//code.jquery.com/jquery-1.11.2.min.js')
+  script(src='/javascripts/main.js')
