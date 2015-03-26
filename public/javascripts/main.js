@@ -11,7 +11,7 @@ $(function(){
       srcText: $('#srcText').val()
     };
     $.ajax({
-      url:'/api/pandoc',
+      url:'./api/pandoc',
       data: data
     }).done(function(response, textStatus, jqXHR){
       if(response.error){

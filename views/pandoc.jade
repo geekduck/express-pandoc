@@ -1,7 +1,7 @@
 extends layout
 
 block extraHeader
-  link(rel='stylesheet', href='/stylesheets/pandoc.css')
+  link(rel='stylesheet', href='./stylesheets/pandoc.css')
 
 block content
   include pandocSelectlang
@@ -24,4 +24,4 @@ block content
       textarea(id='dstText')
 
   script(src='//code.jquery.com/jquery-1.11.2.min.js')
-  script(src='/javascripts/main.js')
+  script(src='./javascripts/main.js')
