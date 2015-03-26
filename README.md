@@ -9,11 +9,12 @@ pandoc as a service
 pandocをラップしたブラウザUIとAPI
 
 ## Demo
-[ブラウザ]('http://10.107.201.122/pandoc')
+ブラウザ http://10.217.198.10/pandoc
 
 cURL
+
 ```
-curl '$ http://10.107.201.122/pandoc/api/pandoc?from=markdown&to=textile&srcText=%23+h1%0A%23%23+h2'
+$ curl http://10.217.198.10/pandoc/api/pandoc?from=markdown&to=textile&srcText=%23+h1%0A%23%23+h2'
 
 {"from":"markdown","to":"textile","srcText":"# h1\n## h2","dstText":"h1(#h1). h1\n\nh2(#h2). h2\n\n"}
 ```
