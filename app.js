@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('./middlewares/allowCors');
 
-var routes = require('./routes/index');
 var pandoc = require('./routes/pandoc');
 var pandocApi = require('./routes/api/pandoc');
 
@@ -28,8 +27,7 @@ app.use(cors);
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/pandoc', pandoc);
+app.use('/', pandoc);
 app.use('/api/pandoc', pandocApi);
 
 // catch 404 and forward to error handler
