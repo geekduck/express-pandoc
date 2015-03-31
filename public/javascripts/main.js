@@ -2,9 +2,6 @@ $(function(){
   "use strict";
   $('#convertButton').on('click', function(event){
     $('#message').text();
-    var srcLan = $('#srcLanguage').val();
-    var dstLan = $('#dstLanguage').val();
-    var srcText = $('#srcText').val();
     var data = {
       from: $('#srcLanguage').val(),
       to: $('#dstLanguage').val(),
@@ -19,6 +16,26 @@ $(function(){
         return;
       }
       $('#dstText').val(response.dstText);
+    }).fail(function(jqXHR, textStatus, error){
+      $('#message').text(textStatus);
+      return;
+    });
+
+    data = {
+      from: $('#srcLanguage').val(),
+      to: "html",
+      srcText: $('#srcText').val()
+    };
+    $.ajax({
+      url:'./api/pandoc',
+      data: data
+    }).done(function(response, textStatus, jqXHR){
+      if(response.error){
+        $('#message').text("エラー: " + response.message);
+        return;
+      }
+      $(".preview").show();
+      $('#dangerousHtml').html(response.dstText);
     }).fail(function(jqXHR, textStatus, error){
       $('#message').text(textStatus);
       return;

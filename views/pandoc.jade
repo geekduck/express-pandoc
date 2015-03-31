@@ -13,7 +13,7 @@ block content
       div(class='flex-column')
         +selectLang(srcName, srcLabel, srclanguages, '#h1\r##h2')
         textarea(id='srcText').
-          # 見出し
+          ## 見出し
 
           # H1タグ
 
@@ -23,7 +23,7 @@ block content
 
 
 
-          # 強調
+          ## 強調
 
           *イタリック*
 
@@ -35,7 +35,7 @@ block content
 
 
 
-          # 順序なしリスト 文頭に「*」「+」「-」のいずれか
+          ## 順序なしリスト 文頭に「*」「+」「-」のいずれか
 
           * 項目1
           * 項目2
@@ -43,14 +43,15 @@ block content
 
 
 
-          # 順序付きリスト 文頭に「数字.」
+          ## 順序付きリスト 文頭に「数字.」
 
           1. 項目1
           2. 項目2
           3. 項目3
 
 
-          # リンク \[リンクテキスト](URL "タイトル")
+
+          ## リンク \[リンクテキスト](URL "タイトル")
 
           [Google](https://www.google.co.jp "Google")
 
@@ -58,13 +59,13 @@ block content
 
 
 
-          # 画像埋め込み \!\[代替テキスト](画像のURL "画像タイトル")
+          ## 画像埋め込み \!\[代替テキスト](画像のURL "画像タイトル")
 
           ![Github](https://assets-cdn.github.com/images/modules/open_graph/github-mark.png "Github")
 
 
 
-          # テーブル
+          ## テーブル
           | Left align | Right align | Center align
           |:-----------|------------:|:------------:|
           | This       |        This |     This     |
@@ -76,13 +77,13 @@ block content
 
 
 
-          # 引用
+          ## 引用
 
           > この文章は引用
 
 
 
-          # 水辺線
+          ## 水辺線
 
           * * *
 
@@ -103,7 +104,9 @@ block content
         +selectLang(dstName, dstLabel, dstlanguages)
         textarea(id='dstText')
 
-    div(class='dangerousHtml')
+    div(class='preview')
+      p プレビュー
+      div(id='dangerousHtml')
 
 
   script(src='//code.jquery.com/jquery-1.11.2.min.js')
