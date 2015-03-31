@@ -55,6 +55,6 @@ $(function(){
   });
 
   $('.content').on('click', '.flex-row .clearTextArea', function(event){
-    $(this).parent().next('textarea').empty();
+    $(this).parent().next('textarea').val("");
   });
 });
