@@ -1,7 +1,8 @@
 mixin selectLang(name, label, languages)
-  div
+  div(class="flex-row")
     label(for='#{name}') #{label}
     select(id='#{name}', name='#{name}')
       -for(var i = 0; i < languages.length; i++){
         option(value="#{languages[i]}") #{languages[i]}
       -}
+    button(class='clearTextArea' type='button') クリア

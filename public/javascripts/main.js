@@ -53,4 +53,8 @@ $(function(){
     swap('#srcLanguage', '#dstLanguage');
     var swap = $('#srcText').val();
   });
+
+  $('.content').on('click', '.flex-row .clearTextArea', function(event){
+    $(this).parent().next('textarea').empty();
+  });
 });

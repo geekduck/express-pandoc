@@ -12,9 +12,15 @@
   }
   .flex-column {
     flex-direction: column;
-    button {
+    > button {
       margin: 50px;
       display: flex;
+    }
+    .flex-row{
+      flex-direction: row;
+      > button{
+        float: right;
+      }
     }
   }
   .preview{
